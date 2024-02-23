@@ -63,7 +63,7 @@ commands:
             cd snappy-1.1.8
             mkdir build
             cd build
-            & $Env:CMAKE_BIN -G "$Env:CMAKE_GENERATOR" ..
+            & $Env:CMAKE_BIN -G "$Env:CMAKE_GENERATOR" -DSNAPPY_HAVE_BMI2=0 ..
             msbuild.exe Snappy.sln -maxCpuCount -property:Configuration=Debug -property:Platform=x64
       - run:
           name: "Build RocksDB"
